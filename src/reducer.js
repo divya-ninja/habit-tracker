@@ -2,6 +2,10 @@ import * as actions from './actionTypes';
 import { v4 as uuid } from 'uuid';
 
 // Getting the previous data from local storage and setting the initial state with it
+if(window.localStorage.getItem('habits') === null){
+    window.localStorage.setItem('habits', []);
+}
+
 const initialState = JSON.parse(window.localStorage.getItem('habits'));
 
 export default function reducer(state = initialState, action){

@@ -7,6 +7,10 @@ import HabitForm from "./HabitForm";
 class Habits extends Component{
     constructor(props){
         super(props);
+
+        if(window.localStorage.getItem('habits') === null){
+            window.localStorage.setItem('habits', []);
+        }
         let initialState = window.localStorage.getItem('habits')
         // getting the previously stored data from local storage and setting the initial state with it
         this.state = {
