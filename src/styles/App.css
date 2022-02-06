@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  width: 60%;
+  height: 100vh;
+  margin: auto;
+  border-left: 50px solid lightblue;
+  border-right: 50px solid lightblue;
+}
+
+.App-nav{
+  padding: 3% 25%;
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: space-around;
+  background-color: lightblue;
+}
+
+.links{
+  text-decoration: none;
+  color: black;
+}
+
+.active{
+  font-weight: 600;
+}

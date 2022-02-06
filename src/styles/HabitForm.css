@@ -1,0 +1,25 @@
+#form{
+    width: 60%;
+    margin: auto;
+    height: 3rem;
+    padding-top: 1rem;
+    background-color: lightblue;
+    border-radius: 1rem;
+}
+
+#label{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+input{
+    width: 40%;
+    height: 1.1rem;
+    border-radius: 0.4rem;
+    margin-right: 1%;
+    padding: 0.2rem;
+}
+
+#add-btn{
+    height: 1.5rem;
+}

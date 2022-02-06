@@ -1,0 +1,30 @@
+#status{
+    width: 90%;
+    height: 50%;
+    background-color: rgb(184, 184, 153);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: visible;
+}
+
+.today{
+    background-color: grey;
+}
+
+.day{
+    height: 4rem;
+    border: 2px solid rgb(184, 184, 153);
+    flex-grow: 100;
+}
+
+#check-icon{
+    color: rgb(32, 150, 58);
+    font-size: 1.5rem;
+}
+
+#cross-icon{
+    color: red;
+    font-size: 1.5rem;
+}

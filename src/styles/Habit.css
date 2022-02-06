@@ -1,0 +1,15 @@
+.flex-display{
+    display: flex;
+    justify-content: space-between;
+}
+
+.habit{
+    padding: 2% 4%;
+}
+
+#list-item{
+    margin-left: 15%;
+    margin-top: -4%;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
