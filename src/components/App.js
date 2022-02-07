@@ -5,6 +5,27 @@ import WeekView from './WeekView';
 import Habits from './Habits';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      habits: []
+    }
+  }
+
+  componentDidMount(){
+    let state = localStorage.getItem('habits');
+    
+    if(state === null){
+      localStorage.setItem('habits', JSON.stringify(new Array(0)));
+  
+    }
+    if(state !== null && state !== []){
+        this.setState({
+            habits: JSON.parse(state)
+        });
+    }
+  }
 
   render(){
     return (
@@ -18,9 +39,9 @@ class App extends Component {
         {/* creating routes for different pages of the app */}
         <Routes>
           {/* default route will take the user to Habits page */}
-          <Route path='/' element={<Habits />} /> 
+          <Route path='/' element={<Habits habits={this.state.habits} />} /> 
           {/* route for showing the status of each habit for the whole week */}
-          <Route path='/week-view' element={<WeekView />}/>
+          <Route path='/week-view' element={<WeekView habits={this.state.habits} />}/>
         </Routes>
       </div>
     );
