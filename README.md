@@ -1,3 +1,8 @@
+# Habit Tracker App
+## It is a web app made using React JS which allows the user to keep a track of the habits for a week. 
+## User can keep the track of a habit by marking the days of the corresponding habit with done, not-done or leaving it blank.
+### Link to the website: https://habit-tracker-b3565.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
