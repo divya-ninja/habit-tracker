@@ -31,9 +31,7 @@ class WeekView extends Component{
 
     // rerendering the component whenever the state of a child component changes
     rerenderWeekView(){
-        this.setState({
-            habits: store.getState()
-        });
+        this.componentDidMount()
     }
 
     render(){
