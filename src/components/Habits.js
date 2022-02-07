@@ -3,22 +3,18 @@ import store from '../store';
 import Habit from './Habit';
 import HabitForm from "./HabitForm";
 
-
 class Habits extends Component{
     constructor(props){
         super(props);
 
-        if(window.localStorage.getItem('habits') === null){
-            window.localStorage.setItem('habits', []);
-        }
-        let initialState = window.localStorage.getItem('habits')
-        // getting the previously stored data from local storage and setting the initial state with it
+        // Getting the state of the habits from the store and setting the initial state with it
         this.state = {
-            habits: JSON.parse(initialState)
+            habits: store.getState()
         }
 
         this.rerender = this.rerender.bind(this);
     }
+
 
     // rerendering the component whenever the state of a child component changes
     rerender(){
@@ -29,6 +25,7 @@ class Habits extends Component{
     }
 
     render(){
+        
         return(
             <div>
                 {/* A form for creating a new habit */}

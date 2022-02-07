@@ -5,6 +5,7 @@ import WeekView from './WeekView';
 import Habits from './Habits';
 
 class App extends Component {
+
   render(){
     return (
       <div className="App">

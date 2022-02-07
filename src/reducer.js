@@ -2,26 +2,36 @@ import * as actions from './actionTypes';
 import { v4 as uuid } from 'uuid';
 
 // Getting the previous data from local storage and setting the initial state with it
-if(window.localStorage.getItem('habits') === null){
-    window.localStorage.setItem('habits', []);
+
+let habits = localStorage.getItem('habits');
+let initialState;
+if(habits === null){
+    localStorage.setItem('habits', JSON.stringify(new Array(0)));
+    initialState = [];
+}
+if(habits !== null && habits !== []){
+    initialState = JSON.parse(habits);
 }
 
-const initialState = JSON.parse(window.localStorage.getItem('habits'));
-
-export default function reducer(state = initialState, action){
+export default function reducer(state= initialState, action){
     // if the dispathed action is of HABIT_ADDED type
     if(action.type === actions.HABIT_ADDED){
         // copying the previous state and adding the new habit in it with a unique id, description and weekStatus array
-        let newState = [
-            ...state,
-            {
-                id: uuid(),
-                description: action.payload.description,
-                weekStatus: ["", "", "", "", "", "", ""]
-            }
-        ];
+        let newState = 
+            [
+                ...state,
+                {
+                    id: uuid(),
+                    description: action.payload.description,
+                    weekStatus: ["", "", "", "", "", "", ""]
+                }
+            ];
+        
+
+        console.log(newState)
+        
         // setting the new state in local storage
-        window.localStorage.setItem('habits', JSON.stringify(newState));
+        localStorage.setItem('habits', JSON.stringify(newState));
         
         return newState;
     }
@@ -31,7 +41,7 @@ export default function reducer(state = initialState, action){
         let newState =  state.filter(habit => habit.id !== action.payload.id);
 
         // setting the local storage with the new state after deletion
-        window.localStorage.setItem('habits', JSON.stringify(newState));
+        localStorage.setItem('habits',  JSON.stringify(newState));
         return newState
     }
     // if the dispathed action is of STATUS_CHANGED type
@@ -49,7 +59,7 @@ export default function reducer(state = initialState, action){
         }
 
         // setting local storage with updated data
-        window.localStorage.setItem('habits', JSON.stringify(state));
+        localStorage.setItem('habits', JSON.stringify(state));
         return state;
            
     }
