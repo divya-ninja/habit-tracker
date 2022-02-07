@@ -23,3 +23,10 @@ input{
 #add-btn{
     height: 1.5rem;
 }
+
+@media screen and (max-width: 800px){
+  #form{
+    width: 70%;
+    margin: auto;
+  }
+}

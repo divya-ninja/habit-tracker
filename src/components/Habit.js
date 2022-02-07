@@ -22,7 +22,7 @@ class Habit extends Component{
         return(
             <div>
                 <div className='flex-display habit'>
-                    <div className='flex-display'>
+                    <div className='description'>
                         <i className="fas fa-user-clock"></i>
                         {/* description of the habit */}
                         <li id="list-item">{this.props.description}</li>
