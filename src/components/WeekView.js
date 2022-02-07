@@ -31,7 +31,17 @@ class WeekView extends Component{
 
     // rerendering the component whenever the state of a child component changes
     rerenderWeekView(){
-        this.componentDidMount()
+        let state = localStorage.getItem('habits');
+        
+        if(state === null){
+            localStorage.setItem('habits', JSON.stringify(new Array(0)));
+        
+        }
+        if(state !== null && state !== []){
+            this.setState({
+                habits: JSON.parse(state)
+            });
+        }
     }
 
     render(){
